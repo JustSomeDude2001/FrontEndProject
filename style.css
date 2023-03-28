@@ -178,3 +178,19 @@
     background-color: #333;
     color: #fff;
   }
+
+  /* Add button */
+  #add-btn {
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: red;
+    z-index: 9999;
+  }
