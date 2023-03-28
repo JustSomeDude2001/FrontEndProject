@@ -7,6 +7,31 @@
     <title>Academic Assignment Management</title>
     <link href="style.css" rel="stylesheet" />
   </head>
+
+  <script>
+    function openAddNewDialog() {
+      const dialog = document.createElement("dialog");
+      dialog.innerHTML = `
+        <h2>Add New Item</h2>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" required>
+          <label for="description">Description:</label>
+          <textarea id="description" required></textarea>
+          <button type="submit">Save</button>
+          <button type="button" onclick="closeDialog()">Cancel</button>
+        </form>
+      `;
+      document.body.appendChild(dialog);
+      dialog.showModal();
+    }
+    
+    function closeDialog() {
+      const dialog = document.querySelector("dialog");
+      dialog.close();
+    }
+  </script>
+
   <body>
     <header>
       <h1>Academic Assignment Management</h1>
@@ -23,7 +48,6 @@
       </ul>
     </nav>
     <main>
-      <button id="add-btn">Add New</button>
       <div class="left">
         <section>
             <h2>Assignments</h2>
@@ -44,6 +68,7 @@
                 <p>Due Date: 10/20/2023</p>
             </li>
             </ul>
+            <button class="button-primary" onclick="openAddNewDialog()">Add New</button>
         </section>
         <section>
             <h2>Courses</h2>
@@ -67,7 +92,9 @@
                 <p>Location: Room 301</p>
             </li>
             </ul>
+            <button class="button-primary" onclick="openAddNewDialog()">Add New</button>
         </section>
+        <!--
         <section>
             <h2>Grades</h2>
             <ul>
@@ -117,6 +144,7 @@
             <button type="submit">Save Changes</button>
             </form>
         </section>
+        -->
       </div>
 
       <div class="right">
